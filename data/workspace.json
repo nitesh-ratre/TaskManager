@@ -1,0 +1,282 @@
+{
+  "projects": [
+    {
+      "id": "marketing-website-redesign",
+      "lists": [
+        {
+          "id": "design-concepts",
+          "title": "Design & Concepts",
+          "todos": [
+            {
+              "id": "dc-1",
+              "done": true,
+              "note": "",
+              "title": "Hero section editorial layout",
+              "dueDate": "Oct 22",
+              "comments": 2,
+              "subtasks": [],
+              "assigneeId": "alex",
+              "commentList": [
+                {
+                  "id": "c-1",
+                  "text": "Checked font scale against 1440px desktop viewport.",
+                  "author": "Alex",
+                  "createdAt": "2026-10-22T10:00:00Z"
+                }
+              ]
+            },
+            {
+              "id": "dc-2",
+              "done": true,
+              "note": "",
+              "title": "Warm parchment color system",
+              "dueDate": "Oct 23",
+              "comments": 1,
+              "subtasks": [],
+              "assigneeId": "sarah",
+              "commentList": []
+            },
+            {
+              "id": "dc-3",
+              "done": false,
+              "note": "Include tablet horizontal scroll behavior",
+              "title": "Case study interactive mockups & visual rhythm",
+              "dueDate": "Tomorrow",
+              "comments": 5,
+              "subtasks": [],
+              "dueUrgent": true,
+              "assigneeId": "sarah",
+              "commentList": []
+            },
+            {
+              "id": "dc-4",
+              "done": false,
+              "note": "Check scale parameters on 2x Retina screens",
+              "title": "Asset handoff with SVG tokens & illustration packs",
+              "dueDate": "Oct 28",
+              "comments": 3,
+              "subtasks": [],
+              "assigneeId": "alex",
+              "commentList": []
+            }
+          ],
+          "dotColor": "#006946",
+          "dueLabel": "Due in 3 days",
+          "subtitle": "Refining page flows, typography, responsive hierarchy, and brand tokens.",
+          "notesCount": 7,
+          "phaseBadge": "Sprint Phase 1 • Design Track",
+          "trackLabel": "TRACK 01",
+          "isMilestone": true
+        },
+        {
+          "id": "frontend-engineering",
+          "title": "Frontend Engineering",
+          "todos": [
+            {
+              "id": "fe-1",
+              "done": true,
+              "title": "Setup Tailwind CSS config",
+              "dueDate": "Oct 20",
+              "comments": 3,
+              "subtasks": [],
+              "assigneeId": "liam",
+              "commentList": []
+            },
+            {
+              "id": "fe-2",
+              "done": false,
+              "title": "Implement standard App Shell",
+              "dueDate": "Oct 27",
+              "comments": 4,
+              "subtasks": [],
+              "assigneeId": "liam",
+              "commentList": []
+            },
+            {
+              "id": "fe-3",
+              "done": false,
+              "title": "Fast navigation state sync",
+              "dueDate": "Oct 28",
+              "comments": 2,
+              "subtasks": [],
+              "assigneeId": "alex",
+              "commentList": []
+            },
+            {
+              "id": "fe-4",
+              "done": false,
+              "title": "Performance audit & zero CLS",
+              "dueDate": "Oct 29",
+              "comments": 0,
+              "subtasks": [],
+              "assigneeId": "devon",
+              "commentList": []
+            }
+          ],
+          "dotColor": "#feb235",
+          "dueLabel": "Due Oct 28",
+          "subtitle": "Core React components, accessible controls, and smooth view transitions.",
+          "notesCount": 12,
+          "phaseBadge": "Sprint Phase 2 • Build Track",
+          "trackLabel": "TRACK 02",
+          "isMilestone": false
+        }
+      ],
+      "title": "Marketing Website Redesign",
+      "status": "In Progress",
+      "members": [
+        "alex",
+        "liam",
+        "sarah",
+        "devon"
+      ],
+      "activeAgo": "Active 20m ago",
+      "coverImage": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=720&q=80",
+      "statusTone": "green",
+      "description": "Rebuilding our homepage, pricing matrix, and modern visual narrative for Q4 launch.",
+      "highlightType": "hill"
+    },
+    {
+      "id": "mobile-app-v3",
+      "lists": [
+        {
+          "id": "mobile-sync",
+          "title": "Offline Sync Engine",
+          "todos": [
+            {
+              "id": "ms-1",
+              "done": true,
+              "title": "SQLite local cache migration",
+              "dueDate": "Oct 22",
+              "comments": 2,
+              "subtasks": [],
+              "assigneeId": "liam",
+              "commentList": []
+            },
+            {
+              "id": "ms-2",
+              "done": true,
+              "title": "Optimistic swipe-to-archive action",
+              "dueDate": "Oct 23",
+              "comments": 1,
+              "subtasks": [],
+              "assigneeId": "sarah",
+              "commentList": []
+            },
+            {
+              "id": "ms-3",
+              "done": false,
+              "title": "Background retry backoff tuning",
+              "dueDate": "Oct 30",
+              "comments": 3,
+              "subtasks": [],
+              "assigneeId": "liam",
+              "commentList": []
+            }
+          ],
+          "dotColor": "#006946",
+          "dueLabel": "Due Nov 01",
+          "subtitle": "Conflict-free queue reconciliation when reconnecting on trains or flights.",
+          "notesCount": 5,
+          "phaseBadge": "Mobile Sprint 3 • Core",
+          "trackLabel": "TRACK 01",
+          "isMilestone": true
+        }
+      ],
+      "title": "Mobile App v3.0",
+      "status": "In Progress",
+      "members": [
+        "liam",
+        "sarah",
+        "devon"
+      ],
+      "activeAgo": "Active 2h ago",
+      "statusTone": "green",
+      "description": "Offline syncing, redesigned inbox swipe actions, and smoother typography rendering.",
+      "highlightText": "\"TestFlight build #448 is live for internal test...\"",
+      "highlightType": "quote",
+      "highlightAuthor": "Latest update from Liam"
+    },
+    {
+      "id": "brand-design-system",
+      "tags": [
+        {
+          "tone": "neutral",
+          "label": "Typography"
+        },
+        {
+          "tone": "neutral",
+          "label": "Figma Lib"
+        },
+        {
+          "tone": "amber",
+          "label": "Priority 1"
+        }
+      ],
+      "lists": [
+        {
+          "id": "tokens-v2",
+          "title": "Design Tokens & Scale",
+          "todos": [
+            {
+              "id": "bd-1",
+              "done": true,
+              "title": "Publish color palette tokens JSON",
+              "dueDate": "Oct 20",
+              "comments": 2,
+              "subtasks": [],
+              "assigneeId": "sarah",
+              "commentList": []
+            },
+            {
+              "id": "bd-2",
+              "done": false,
+              "title": "Audit elevation & hairline border rules",
+              "dueDate": "Oct 29",
+              "comments": 1,
+              "subtasks": [],
+              "assigneeId": "alex",
+              "commentList": []
+            }
+          ],
+          "dotColor": "#feb235",
+          "dueLabel": "In review",
+          "subtitle": "Canonical Newsreader + Inter pairing across web and mobile.",
+          "notesCount": 6,
+          "phaseBadge": "Design System • v2",
+          "trackLabel": "TRACK 01",
+          "isMilestone": true
+        }
+      ],
+      "title": "Brand Guidelines & Design System",
+      "status": "Reviewing",
+      "members": [
+        "sarah",
+        "alex",
+        "maya",
+        "liam",
+        "devon"
+      ],
+      "activeAgo": "Active yesterday",
+      "statusTone": "amber",
+      "description": "Standardizing type scale, color tokens, and editorial illustration rules for all digital products.",
+      "highlightType": "tags"
+    }
+  ],
+  "userName": "Alex",
+  "trashItems": [],
+  "userProfile": {
+    "id": "alex",
+    "bio": "Focusing on calm software, typography, and humane product pacing.",
+    "name": "Alex Morgan",
+    "color": "#1d4e3b",
+    "email": "alex@acme.studio",
+    "title": "Product Lead & Designer",
+    "initials": "AM",
+    "timezone": "America/New_York (GMT-5)",
+    "statusEmoji": "🌿",
+    "statusMessage": "In deep work on Website Redesign"
+  },
+  "announcement": "Fall Retreat & Q4 Priorities Overview",
+  "workspaceName": "Acme Studio"
+}
