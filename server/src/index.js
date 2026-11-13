@@ -1,13 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { readWorkspace, writeWorkspace, syncFromDatabaseIfAvailable } from './storage.js';
-import { initDatabase, pool } from './db.js';
-import {
-  getSupabaseEnvConfig,
-  createSupabaseMiddleware,
-  getAdminClient,
-} from './supabase.js';
+import { readWorkspace, writeWorkspace } from './storage.js';
 
 dotenv.config();
 
@@ -19,53 +13,20 @@ app.use(
   cors({
     origin: clientOrigin,
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'apikey'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 app.use(express.json());
-
-// Inbound Supabase Context Middleware via @supabase/server
-app.use(createSupabaseMiddleware({ auth: 'none' }));
 
 // -----------------------------------------------------------------------------
 // SYSTEM & HEALTH ENDPOINTS
 // -----------------------------------------------------------------------------
 
-app.get('/health', async (req, res) => {
-  const config = getSupabaseEnvConfig();
-  let dbOk = false;
-  try {
-    const q = await pool.query('SELECT 1;');
-    dbOk = q.rowCount === 1;
-  } catch {}
+app.get('/health', (req, res) => {
   res.json({
     status: 'ok',
     service: 'TaskManager Backend',
     timestamp: new Date().toISOString(),
-    databaseConnected: dbOk,
-    supabaseConfigured: config.isConfigured,
-    supabaseContextActive: Boolean(req.supabaseContext),
-  });
-});
-
-app.get('/api/supabase/status', async (req, res) => {
-  const config = getSupabaseEnvConfig();
-  let dbOk = false;
-  let rowCount = 0;
-  try {
-    const q = await pool.query('SELECT COUNT(*) FROM basecamp_workspace;');
-    dbOk = true;
-    rowCount = Number(q.rows[0].count);
-  } catch {}
-  res.json({
-    projectUrl: process.env.SUPABASE_URL || null,
-    databaseConnected: dbOk,
-    tablesCreated: dbOk,
-    workspaceRecords: rowCount,
-    hasPublishableKey: Boolean(config.publishableKey),
-    hasSecretKey: Boolean(config.secretKey),
-    contextActive: Boolean(req.supabaseContext),
-    authMode: req.supabaseContext?.authMode || 'none',
   });
 });
 
@@ -483,12 +444,6 @@ app.delete('/api/trash/:trashId', (req, res) => {
   res.json({ message: 'Permanently deleted', deleted });
 });
 
-app.listen(port, async () => {
+app.listen(port, () => {
   console.log(`TaskManager backend running on http://localhost:${port}`);
-  try {
-    await initDatabase();
-    await syncFromDatabaseIfAvailable();
-  } catch (err) {
-    console.warn('Initial database setup warning:', err.message);
-  }
 });

@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { saveWorkspaceToDatabase, loadWorkspaceFromDatabase } from './db.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -204,23 +203,4 @@ export function readWorkspace() {
 export function writeWorkspace(data) {
   ensureDirSync(path.dirname(DATA_FILE));
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
-  // Asynchronously replicate to Supabase PostgreSQL database
-  saveWorkspaceToDatabase(data).catch((err) => {
-    console.warn('Background Supabase DB sync warning:', err.message);
-  });
-}
-
-export async function syncFromDatabaseIfAvailable() {
-  try {
-    const remote = await loadWorkspaceFromDatabase();
-    if (remote && Array.isArray(remote.projects) && remote.projects.length > 0) {
-      ensureDirSync(path.dirname(DATA_FILE));
-      fs.writeFileSync(DATA_FILE, JSON.stringify(remote, null, 2), 'utf-8');
-      console.log('Synchronized workspace from Supabase PostgreSQL database.');
-      return remote;
-    }
-  } catch (err) {
-    console.warn('Initial Supabase sync check:', err.message);
-  }
-  return null;
 }
