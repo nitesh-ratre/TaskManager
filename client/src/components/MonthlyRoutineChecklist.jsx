@@ -195,6 +195,8 @@ export function MonthlyRoutineChecklist({ onNavigate }) {
   // Modal states
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [editingHabit, setEditingHabit] = useState(null);
+  const [habitToDelete, setHabitToDelete] = useState(null); // { id, name, target }
+  const [isResetModalOpen, setIsResetModalOpen] = useState(false);
   const [habitForm, setHabitForm] = useState({
     name: '',
     target: '',
@@ -399,18 +401,25 @@ export function MonthlyRoutineChecklist({ onNavigate }) {
     setIsAddModalOpen(false);
   }
 
-  // Delete routine
-  function handleDeleteHabit(habitId, habitName) {
-    if (window.confirm(`Delete "${habitName}" from your checklist?`)) {
-      setHabits((prev) => prev.filter((h) => h.id !== habitId));
-    }
+  // Delete routine confirmation
+  function handleRequestDeleteHabit(habit) {
+    setHabitToDelete(habit);
+  }
+
+  function handleConfirmDeleteHabit() {
+    if (!habitToDelete) return;
+    setHabits((prev) => prev.filter((h) => h.id !== habitToDelete.id));
+    setHabitToDelete(null);
   }
 
   // Reset to default seed habits
-  function handleResetDefaults() {
-    if (window.confirm('Reset checklist back to default October 2024 routine habits?')) {
-      setHabits(INITIAL_HABITS);
-    }
+  function handleRequestResetDefaults() {
+    setIsResetModalOpen(true);
+  }
+
+  function handleConfirmResetDefaults() {
+    setHabits(INITIAL_HABITS);
+    setIsResetModalOpen(false);
   }
 
   // Month navigation display
@@ -707,7 +716,7 @@ export function MonthlyRoutineChecklist({ onNavigate }) {
 
           <button
             type="button"
-            onClick={handleResetDefaults}
+            onClick={handleRequestResetDefaults}
             title="Reset to default seed habits"
             style={{
               border: 'none',
@@ -846,7 +855,7 @@ export function MonthlyRoutineChecklist({ onNavigate }) {
                           <button
                             type="button"
                             className="routine-row-action-btn delete"
-                            onClick={() => handleDeleteHabit(habit.id, habit.name)}
+                            onClick={() => handleRequestDeleteHabit(habit)}
                             title="Delete routine"
                           >
                             <span className="material-symbols-outlined" style={{ fontSize: 15 }}>
@@ -1033,6 +1042,199 @@ export function MonthlyRoutineChecklist({ onNavigate }) {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* 7. Delete Routine Confirmation Modal */}
+      {habitToDelete && (
+        <div
+          className="routine-modal-backdrop"
+          onClick={() => setHabitToDelete(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="delete-routine-title"
+        >
+          <div
+            className="routine-modal-card"
+            style={{ maxWidth: 460 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ padding: '24px 24px 20px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+                <div
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: 12,
+                    background: 'rgba(186, 26, 26, 0.12)',
+                    color: 'var(--error, #ba1a1a)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                  }}
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: 24 }}>
+                    delete_forever
+                  </span>
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <h2
+                    id="delete-routine-title"
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '1.35rem',
+                      fontWeight: 600,
+                      color: 'var(--on-surface)',
+                      margin: '0 0 6px',
+                    }}
+                  >
+                    Delete Routine?
+                  </h2>
+                  <p
+                    style={{
+                      margin: 0,
+                      fontSize: '0.92rem',
+                      lineHeight: 1.5,
+                      color: 'var(--on-surface-variant)',
+                    }}
+                  >
+                    Are you sure you want to remove <strong>“{habitToDelete.name}”</strong> from your routine checklist?
+                  </p>
+                </div>
+              </div>
+
+              <div
+                style={{
+                  marginTop: 18,
+                  padding: '10px 14px',
+                  borderRadius: 8,
+                  background: 'var(--surface-container-low, #f1f3fd)',
+                  border: '1px solid var(--outline-variant, #bec9c0)',
+                  fontSize: '0.83rem',
+                  color: 'var(--on-surface-variant)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 10,
+                }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: 18, color: 'var(--secondary)' }}>
+                  info
+                </span>
+                <span>All tracked completion checkmarks for this routine in October 2024 will be removed.</span>
+              </div>
+            </div>
+
+            <div className="routine-modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                onClick={() => setHabitToDelete(null)}
+                autoFocus
+              >
+                Keep Routine
+              </button>
+              <button
+                type="button"
+                className="btn btn-sm"
+                onClick={handleConfirmDeleteHabit}
+                style={{
+                  background: 'var(--error, #ba1a1a)',
+                  color: '#ffffff',
+                  borderColor: 'var(--error, #ba1a1a)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  fontWeight: 600,
+                }}
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: 16 }}>
+                  delete
+                </span>
+                <span>Delete Routine</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 8. Reset Defaults Confirmation Modal */}
+      {isResetModalOpen && (
+        <div
+          className="routine-modal-backdrop"
+          onClick={() => setIsResetModalOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="reset-routine-title"
+        >
+          <div
+            className="routine-modal-card"
+            style={{ maxWidth: 460 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ padding: '24px 24px 20px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+                <div
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: 12,
+                    background: 'var(--surface-container-high, #e5e8f2)',
+                    color: 'var(--primary, #006946)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                  }}
+                >
+                  <span className="material-symbols-outlined" style={{ fontSize: 24 }}>
+                    restart_alt
+                  </span>
+                </div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <h2
+                    id="reset-routine-title"
+                    style={{
+                      fontFamily: 'var(--font-serif)',
+                      fontSize: '1.35rem',
+                      fontWeight: 600,
+                      color: 'var(--on-surface)',
+                      margin: '0 0 6px',
+                    }}
+                  >
+                    Reset Routine Checklist?
+                  </h2>
+                  <p
+                    style={{
+                      margin: 0,
+                      fontSize: '0.92rem',
+                      lineHeight: 1.5,
+                      color: 'var(--on-surface-variant)',
+                    }}
+                  >
+                    This will restore the standard 10 morning, focus, and physical health habits for October 2024.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="routine-modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                onClick={() => setIsResetModalOpen(false)}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+                onClick={handleConfirmResetDefaults}
+              >
+                Reset Checklist
+              </button>
+            </div>
           </div>
         </div>
       )}

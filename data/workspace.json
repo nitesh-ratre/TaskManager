@@ -1,270 +1,122 @@
 {
   "projects": [
     {
-      "id": "marketing-website-redesign",
-      "lists": [
-        {
-          "id": "design-concepts",
-          "title": "Design & Concepts",
-          "todos": [
-            {
-              "id": "dc-1",
-              "done": true,
-              "note": "",
-              "title": "Hero section editorial layout",
-              "dueDate": "Oct 22",
-              "comments": 2,
-              "subtasks": [],
-              "assigneeId": "alex",
-              "commentList": [
-                {
-                  "id": "c-1",
-                  "text": "Checked font scale against 1440px desktop viewport.",
-                  "author": "Alex",
-                  "createdAt": "2026-10-22T10:00:00Z"
-                }
-              ]
-            },
-            {
-              "id": "dc-2",
-              "done": true,
-              "note": "",
-              "title": "Warm parchment color system",
-              "dueDate": "Oct 23",
-              "comments": 1,
-              "subtasks": [],
-              "assigneeId": "sarah",
-              "commentList": []
-            },
-            {
-              "id": "dc-3",
-              "done": false,
-              "note": "Include tablet horizontal scroll behavior",
-              "title": "Case study interactive mockups & visual rhythm",
-              "dueDate": "Tomorrow",
-              "comments": 5,
-              "subtasks": [],
-              "dueUrgent": true,
-              "assigneeId": "sarah",
-              "commentList": []
-            },
-            {
-              "id": "dc-4",
-              "done": false,
-              "note": "Check scale parameters on 2x Retina screens",
-              "title": "Asset handoff with SVG tokens & illustration packs",
-              "dueDate": "Oct 28",
-              "comments": 3,
-              "subtasks": [],
-              "assigneeId": "alex",
-              "commentList": []
-            }
-          ],
-          "dotColor": "#006946",
-          "dueLabel": "Due in 3 days",
-          "subtitle": "Refining page flows, typography, responsive hierarchy, and brand tokens.",
-          "notesCount": 7,
-          "phaseBadge": "Sprint Phase 1 • Design Track",
-          "trackLabel": "TRACK 01",
-          "isMilestone": true
-        },
-        {
-          "id": "frontend-engineering",
-          "title": "Frontend Engineering",
-          "todos": [
-            {
-              "id": "fe-1",
-              "done": true,
-              "title": "Setup Tailwind CSS config",
-              "dueDate": "Oct 20",
-              "comments": 3,
-              "subtasks": [],
-              "assigneeId": "liam",
-              "commentList": []
-            },
-            {
-              "id": "fe-2",
-              "done": false,
-              "title": "Implement standard App Shell",
-              "dueDate": "Oct 27",
-              "comments": 4,
-              "subtasks": [],
-              "assigneeId": "liam",
-              "commentList": []
-            },
-            {
-              "id": "fe-3",
-              "done": false,
-              "title": "Fast navigation state sync",
-              "dueDate": "Oct 28",
-              "comments": 2,
-              "subtasks": [],
-              "assigneeId": "alex",
-              "commentList": []
-            },
-            {
-              "id": "fe-4",
-              "done": false,
-              "title": "Performance audit & zero CLS",
-              "dueDate": "Oct 29",
-              "comments": 0,
-              "subtasks": [],
-              "assigneeId": "devon",
-              "commentList": []
-            }
-          ],
-          "dotColor": "#feb235",
-          "dueLabel": "Due Oct 28",
-          "subtitle": "Core React components, accessible controls, and smooth view transitions.",
-          "notesCount": 12,
-          "phaseBadge": "Sprint Phase 2 • Build Track",
-          "trackLabel": "TRACK 02",
-          "isMilestone": false
-        }
-      ],
-      "title": "Marketing Website Redesign",
-      "status": "In Progress",
-      "members": [
-        "alex",
-        "liam",
-        "sarah",
-        "devon"
-      ],
-      "activeAgo": "Active 20m ago",
-      "coverImage": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=720&q=80",
-      "statusTone": "green",
-      "description": "Rebuilding our homepage, pricing matrix, and modern visual narrative for Q4 launch.",
-      "highlightType": "hill"
-    },
-    {
-      "id": "mobile-app-v3",
-      "lists": [
-        {
-          "id": "mobile-sync",
-          "title": "Offline Sync Engine",
-          "todos": [
-            {
-              "id": "ms-1",
-              "done": true,
-              "title": "SQLite local cache migration",
-              "dueDate": "Oct 22",
-              "comments": 2,
-              "subtasks": [],
-              "assigneeId": "liam",
-              "commentList": []
-            },
-            {
-              "id": "ms-2",
-              "done": true,
-              "title": "Optimistic swipe-to-archive action",
-              "dueDate": "Oct 23",
-              "comments": 1,
-              "subtasks": [],
-              "assigneeId": "sarah",
-              "commentList": []
-            },
-            {
-              "id": "ms-3",
-              "done": false,
-              "title": "Background retry backoff tuning",
-              "dueDate": "Oct 30",
-              "comments": 3,
-              "subtasks": [],
-              "assigneeId": "liam",
-              "commentList": []
-            }
-          ],
-          "dotColor": "#006946",
-          "dueLabel": "Due Nov 01",
-          "subtitle": "Conflict-free queue reconciliation when reconnecting on trains or flights.",
-          "notesCount": 5,
-          "phaseBadge": "Mobile Sprint 3 • Core",
-          "trackLabel": "TRACK 01",
-          "isMilestone": true
-        }
-      ],
-      "title": "Mobile App v3.0",
-      "status": "In Progress",
-      "members": [
-        "liam",
-        "sarah",
-        "devon"
-      ],
-      "activeAgo": "Active 2h ago",
-      "statusTone": "green",
-      "description": "Offline syncing, redesigned inbox swipe actions, and smoother typography rendering.",
-      "highlightText": "\"TestFlight build #448 is live for internal test...\"",
-      "highlightType": "quote",
-      "highlightAuthor": "Latest update from Liam"
-    },
-    {
-      "id": "brand-design-system",
+      "id": "project-1794510637432",
       "tags": [
         {
           "tone": "neutral",
-          "label": "Typography"
-        },
-        {
-          "tone": "neutral",
-          "label": "Figma Lib"
-        },
-        {
-          "tone": "amber",
-          "label": "Priority 1"
+          "label": "New Project"
         }
       ],
       "lists": [
         {
-          "id": "tokens-v2",
-          "title": "Design Tokens & Scale",
+          "id": "list-1794510713920",
+          "title": "Aptitude",
           "todos": [
             {
-              "id": "bd-1",
-              "done": true,
-              "title": "Publish color palette tokens JSON",
-              "dueDate": "Oct 20",
-              "comments": 2,
+              "id": "todo-1794510750917",
+              "done": false,
+              "note": "",
+              "title": "Time & Work",
+              "dueDate": "Nov 13",
+              "comments": 0,
               "subtasks": [],
-              "assigneeId": "sarah",
+              "assigneeId": "alex",
               "commentList": []
             },
             {
-              "id": "bd-2",
+              "id": "todo-1794510756109",
               "done": false,
-              "title": "Audit elevation & hairline border rules",
-              "dueDate": "Oct 29",
-              "comments": 1,
+              "note": "",
+              "title": "Pipe & Cistern",
+              "dueDate": "Nov 13",
+              "comments": 0,
+              "subtasks": [],
+              "assigneeId": "alex",
+              "commentList": []
+            },
+            {
+              "id": "todo-1794510767879",
+              "done": false,
+              "note": "",
+              "title": "Syllogism",
+              "dueDate": "Nov 13",
+              "comments": 0,
               "subtasks": [],
               "assigneeId": "alex",
               "commentList": []
             }
           ],
-          "dotColor": "#feb235",
-          "dueLabel": "In review",
-          "subtitle": "Canonical Newsreader + Inter pairing across web and mobile.",
-          "notesCount": 6,
-          "phaseBadge": "Design System • v2",
+          "dotColor": "#006946",
+          "dueLabel": "Active",
+          "subtitle": "Focused to-do track for this milestone.",
+          "notesCount": 0,
+          "phaseBadge": "Track 01 • Active",
           "trackLabel": "TRACK 01",
+          "isMilestone": true
+        },
+        {
+          "id": "list-1794510720067",
+          "title": "Reasoning",
+          "todos": [],
+          "dotColor": "#006946",
+          "dueLabel": "Active",
+          "subtitle": "Focused to-do track for this milestone.",
+          "notesCount": 0,
+          "phaseBadge": "Track 02 • Active",
+          "trackLabel": "TRACK 02",
           "isMilestone": true
         }
       ],
-      "title": "Brand Guidelines & Design System",
-      "status": "Reviewing",
+      "title": "BOB SO Exam",
+      "status": "In Progress",
       "members": [
-        "sarah",
-        "alex",
-        "maya",
-        "liam",
-        "devon"
+        "alex"
       ],
-      "activeAgo": "Active yesterday",
-      "statusTone": "amber",
-      "description": "Standardizing type scale, color tokens, and editorial illustration rules for all digital products.",
+      "activeAgo": "Active just now",
+      "coverImage": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAHaAdoDASIAAhEBAxEB/8QAGwABAAMBAQEBAAAAAAAAAAAAAAQFBgMCAQf/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMEBQH/2gAMAwEAAhADEAAAAf1QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAo4WXjM/artKzQ0rM+jSKe2to9CcAABF89lOPYD3wAAAAAAAAAAjeoy7iUQAAAAAAPn5vuMDzevL42NTk3pPCz89hRyM1jH5ShuczsKXpcjpffmH6D57OPm3nQ81aU3P6lhY5649X7Ld78uiU9xbQKgt2Vta7qvpF6ZN1ncZnlfm1bH2U675DmXZjzSRnesz5ru1EStjPYllTc8XQ3ii57uZoWU8Rs1yvsL8oSiAAABmM/Kk8jvRa5ZU6O1RJiib08++feHHb2U2mbv/AM/2c+Nvshv6r/vLrSbebSOtZy+3pauf80ZaSfDtadE27prnoclElVMo0Vln7fn9WPwt6rz21+V/eddVPk1VV+76HW4PDH21fh6ke4zmvrsoOnbx57NhSVlUWZRbDyXHMaqh9jsB0OWAAAA5daaFmPtOtJyO97sJOferXpB8epVQjP8ARI2dsuhyaCVz12fXI7nU4qHMee5qn3rPrg0GtWVY+foUJ/PppyVsDQqb8b716u7P89InXSVt3ZQnSR9GnWF+eBU6VTfhpWv406M9Ct73z3FaKzW04aN+hUufVAnXPrTkC/MAAAAyWty+bZz4efOPoV1v0pK7PUaXOhbBkxonj7usJuNGWJlt1gXv6PIob7o8gLKjNcM2vWKW6uzhOABEhV23AsqAPmZrt07hUl6ycmu7RjRkAAAGbrt0gsqAAAAAiVN94pvz3idCy7qex5xs+pW3niMqiX34xnz/AEOI6XIqMp1nc/q6e1OxwHj3WmN1+O68rt9tfBqtGW3ssbM9jc+KOrhZpPtZz8lpbOmmbOf5453hl26Oh7TYz0359vfzidW7w8yyqv0VdCh35dZDpqXye340fb2N33wkqM9DnLD5Cd9GpYcobz7Cm7uaEogAAAcc9o6vPqqa/Ts+vHy9H4hZyvKGHdmnZbRXFd2Z2PVrwhdnZ3RZ6jTz5xO+Tf446Ol9jVWiTXb1otRCtooPVrKq0XlFYfNvNg56fbZd1LqKDWXZq3O39DC28oumheZLt26UanuXMvy569j1vkovLXZ6u2Vw+2U4VdXd/K7dV9OrwwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/8QALBAAAgICAQIGAgIBBQAAAAAAAwQBAgAFEhETEBQVISMwIiQgQKAxMjM0UP/aAAgBAQABBQL/ABa2dhATeq56rGeqxnqsZ6rGRtYwexBbImLR/M5xgqEkFF/XOagagLBhf0J9oLfuFVH3TEmLExcXdue1bE8E2ZBcqgywQjKhVNhBJ8XLEoDuS0kkx2teizZn6XyM0YM9Mg13fmv1NWJQFSS0pp79Qf0NhftqZHwpZETaWJgA/AAbFtfpF1/+Dc1+LEid1bJ/05P4QR17Id/Il6MO02DBFdLQcu8/A3nO4Zpte1GLnWo8zch22gWk7kAA22e1nmak6v4t3uOW68er+HO4CoGHDx1fw53AVBQ5LokLUvV/CEdHQDjR7FeZERWWJ+zc3wA5KZ4kXPgY8sGfecXBJcYNEwuOTGj2jc3/ABzX14p4W8DHDBmTv94eIdAICIw4dySd49WAras1yj8PMhzYm8wYNqKpamnJl2e89trcF9VHbXX5kZM20Iw55Dw5ICKhTtnf7o5BbyusV8w0RwDOdPLarTU6lbevYnk2CDSV8tlP2H/s2N+bavwK4mGLyyaTFxdfnDB+5lKzeyKvl6lJUVGCycqYJYLHtGbe3RVJWDrHJcpNl8SWoiKhD+w9ub5qh8FsmOsTrl862VY2YxUHrI7Smur3HNtbq1dgdNbpqe8/sO+G5t0CBXuJFJZkzi8lWXXbXwWxNJdzf8Ffh1iFObZ2xAk56ylp6dT/AFltwHSslLsrREhHYxHSVrGLrxwZPJpVUgsgAMEMOiDjLF2LLIkNgRVDTwbBDAh6+9MTHzbcXhgd0rABqxWknp83LEdIxlrsXvsLcVUiFLtuVzsRItZpxzEHIrc2zHFcSFaqCSNwn8HF4ZHVCR014ps3s4L5mjvBXXLXsfZ8iNnBMoo38uxMWYaep2U9SPgv9e1vxV1tYpW0ze8/pLYBeoxsHse/gs11w+trMBNK11WhsR/SqmKC/Qa01EgRkhP4X19LsViKx9m2tzYfnsLIirShiWMUQaLUYNc98CuQudQAyfedbfmptwxNB3kd1yQYP/nKV77taS848bvEoOiVDFsW4FyGnouth2CG8dXXipsf+nmnn9fxNspoX1S2KPVPf+LRuwFFuWb/AMJnpBNp+QLTcLj0gL6pbA7OLX+n1GZN9jd+2vekgRN+uGIHr6VoZsnZXVw7ZCxkRNplUtaLBk5a1itdwb8M1o+2r4XnjUFe6y2EML62s2bOyIGRsQTMkrAqvAtldgC1tzf4tPXiCrobXwzYQyN8F7bFmlRa2w6MY7bm2NYUB48jFLQNfUgYItC1h0E3E0MpCPgpIGxGkxqBr58Nqa2vNw7QgzXYgmY94+m9Ivk0jnMSCZXGLCu3vg0zkzydB53FB5Z0uBEVq6q9V6NMVXoS9iXQWk5fHY24KAqSbsWPmr7XZMvEMbCwJtM8NPq16mtesSxtrfsEP0V16nZq4Xsr64EMGfpUbL9awHVL0sMluNKxa9zWaimp7M22AJuVuVoW1k9tZcUnK2KEx61ShBB9m9iSStvLDApp6e/l6UO/IpMlHRX6yxM0tCQ5nYRXCMMFyBEnKInvgNZWufgKjOyrXCXsSyqNy4IdRU8dzf49NX8dwSs4reQIa9eGLt1pVjZ/gLX/ABa/X15uMT3nGa+XbHaLj3M/Fp46AJ+w5tZ/ZRpwV2VuKmprya2Za1W1n4kBWXG9iIQbz8Wo01fy29urQp7Gt11eTKvyObm/vS8g1uuVqeCVrLMR0j6yf7PmzkznNzOTudX8tXYWyUGSTTV4FQIv5bBUrBfTmMFrLzLS3cVXUapMa8sHfUMdggL+QRUICyyBaMbBO5yIjIID63mBVVcpVFLsSdE5WI9o2ISHH6cxldaWZorSiw0mhkPrzWu2qQgdeCQB2CdjX8o3eiqtQC8iwMpkGL3YTtdNZRmuLIFox/jTf//EADQRAAICAQIDBAkDBAMAAAAAAAECAAMRBBITITEQFCJBBSAjMkJSYXGRMICBJFGhsdHh8P/aAAgBAwEBPwH9ptdTWnCTuV3yzuV3yzuV3yx6nr94eoqljgQjBwf1Njbd3l+j6NTkXiHcxaOx91esAwMRttmUM0tvtOE/MTXaZavGnZpkCjGRnymoqTLDlk/WHSMBuyMR02ecRN5xnEbSuoDeUFJ8KlRkfWWaZ7CX5YjaRl94iMNpxEr3+YE7o23dkYiac7hgg/zLagyMq/f7Qacn4h+Z3GzO3lmOu049av2NAA6/8zlSn2lakeJupjOWO1JfaumTA6zQUln3+QnpK0YFcpTiOFiBTZheiwECtr/MnlGOHSrE1OOK22Viv446L4Kvhm72tlnyiCs93VB8UJV7WDDkohmmVEq4jdTL8KqV2fzCWL7qsECAngE+bmX5pK10jnKWYLZc/X1qk3uFg8dv0X/cX2rb/IdIXNh2p0/vDXhdqHENCpZ/UGai16UxUvKEknJisVO4Rdc+DnzlWpesbR0j6x2YsvLsSysdVz/M763E3kTvJ4ZTHWDULUQUyZ3l/Fj4uxNRYg2g8p3wtaHx9JZfwdyKOZjakkKAPdletQsWYYOI2pLV8P1tJ4CbD5RQccHz6mD2vhTks4ip4Fmxm9+ekQOFNA2+rBl6bLCo7BoriM4llbVna3aKXKcQdO2qh7fcESlnbYvWHRXAZx6tdL252+vXaFGP/fSKwIwfP8n/AKhyR4ztESxAMVCFnHNsATU3HUvtSVqumq5yx97FjK13sFl1RssXDYxLdt9x38sR9ImFK5GTBo6S7Jz5RaS2nWsecsRDZsqi6SnfwsnMUJVpj9Z6NXmzxA2nRrCcynT1sBnJzF0abn3HkJ3ekLxTnbDoV4gAPKLw0od6/OV6SpvDz+8YbWI9ahsDr/kCLai9FH5h1bnpt/MZeKc22CLfp9OPZ8zL9S93Xs0hUWgtDwRbxi8W9WR2BwTONWXTxdIty7bGzzM7zWrhM8sSopXf9IbEqZ7d2SZqbF4SIpmmKcAqWwTC9VNXCU5zOKnEB38pZcvAbB5kwGu2pF3YxF1KWM/PED1KiV5nHVWZi/2/bZ//xAAvEQACAgECBQIEBwADAAAAAAABAgADERIhBBMiMUEQFCAjMlEwM0JhcYCR4fDx/9oACAECAQE/Af6mvYqDLT3VX3nuqvvPdVfeK6v9J+AkDcwHO/4moZ0/g8c24WN0gCIPJ7QnMXUnUJenRrXYzhby/S3pcxJzg4lNjYB3x/E9wucYMVtUZtMW9WOPM5ndgTiJeqYXeDiFbsDAcjMZ9Pie4XOnBjXbdjK7CrKxnO/Yz3SYzFOoZ+J/mWnPab2NHYdh2gUAamlVbXNv2nF2BU0/ecEnd5Y2hS0YnRlvMwda1eBAOlrJRnljMfX+iKx6rPM09CJ95rHOZj4gytYIO59L2ZrNA8Srcs6TC6cWZyZtzQPCiVfMBe0y1V1JWvb4rG0qTPpr/mN8tdPkwKE3aB+rLbwWlk+SJTWtrdZ3gGNhGAYYMPCrkYj0K+/mLwyhcHf0ZHPZp7UaNIM5HWG+0NJcHVOQu37ejUox1Ge2Ar05iVc3DE9otGCxPmPwrBQo3i0YfX8XE9QCDzCRnmf5Py92+qaGbqaagv0zgs8ycYNNmRKm1oD6Hiqx5iOrjK+psUNo8+tlq1/VGsVV1GDiqz5+F7FT6vjesscxlI3H/n/MGP0DUYyMd7DNK9hvKKhQuWjsb7Noi6V0xzpUmVWBEORK9VVXT5i8Q2WB8Q8TaFDfeGwC4ufERm0arIeJs08zxDqsv/icaeyxiLmCAYllzgnG2I3EthcDcznWluWO8HFnRk942t7VV4/EWDfaKcjPxXDP/cxkZu7H/IOHTzmBuX+Wkaq649e0qoWrt6cRk1kLPmGvlBY1TKygjIE5b6W27xqm1IMbCchypbG+ZZqer94EawLXjGJQh5jOZeH5oYDOJosts1kYxOW2g9O8So80bbCdaWMcd4aGQLtNNjMz4nKJVRp/rZ//xAA4EAABAwICBwYFAwQDAQAAAAABAAIRAxIhMRATIjJBUWEEM0JScZEgIzCBoUBisRRyoMFQY4Ky/9oACAEBAAY/Av8AFrLLLo6ruvyu6/K7r8ruvyu6/KxpH3WMt9VIMj6E1Cmvbkf1E1DCD25H9E53MoA7oxPonECBy0Rk3MnkEdW21vDT+w5hS3YdzarDUP8AKDKotdz4fA51ES5Oa7GpT2vUJ54sKdc0AD6JsLgzhCtpNqazmQi+uXdAfpuNIS5VGPM1GbQTm8j+hf1w0T46uH20QM1qG72dQ/604YNGbjwRtMt4FU/7QmO4gxoY456MFuU0axa1qfqGtI4ysKdNDWCmJQe1tOCm3imG8dJ1VlnCUNaG4q+gBfMYoMbZdlkg19krWnV2IimGYIsNl0xksqaP9RbPTQbc1lTV1TVwiaYZAWVNXVNXCNekGiCi2gBLua3aaLnNpwFbTDJRY4MkI68NA4R9SnT+6awcVDdxmyNGud3jtwf7WOgkm2mM3LV0hbSH5TWDjops++in76HPdkEG63VgoUqlS8byNV3qobULRnhwVlR1xZhKpuNS0ZWhO1hm056e9Z7praW0G/lPaXt1ucTxV3lCcBztCp0wqlUoFrbnTKLXuEjhCaThI0OeeCt1tkoUqtS8ZhX+I4o/OcI4oMl1VucwjODiP5T38hCLKJhuU81FTtGeYTpdJK/ud9V/TBVK53jst0F9TumYlFxy4DloNSobaIzPNBjBbSGTVa0SVJxqHNF7zACLygPDxKgaI5lVDk+cCtveGyqdMeiqVCh+50qnT+6nzGdELdPunWO3T7prmth7zKqVSgTw2lHlCbSYZeRiqj/sv7naWN5laxnegyECd4wEKdPwp2rDMU1rmtzhMZzxT38TiqY6yoeceQT6rDgRgnP8o+o53ISgBvOKZQZu0wgxuZQ7PS3GZ9To13aNml/9LysGTVtVmDoM1sD7rO53IKX5cApOwzmVawYabSY5FGa5DeNqZgbZlWzBGRTyapI8reKe7dIbAKvr1b1Ay0Btjnei+XRfd1V9YENzM8UGgGGhNYBiYCqPIjgrKjbnzGSZTo08MzARAwe6c0HvLcOWmCYIyKddWdZmQ1MkGBipF1sYQgwU33gQg9zSGtxxRABwwRpNzAU1GuyjJOjNx4qlRbjzUnNx+pHmMKp2h+TBgiTmV/31PwNGu7Tu+FvNS7LgOWkU+07VP+FNAweRUOpNJHPNbODuR/R6yDdM5/Rc5okgYI66Q0Dyx8JqEm08EAMvqspt4Kn2dvqUe01t1u71Re7MoVu073hYrn6JAhvmOS2Pmv5nLQ2eGCFUZjAoOaYITXjj/wAfVru3WnBOPg/0hSpd23AAcVrK21WO63ki55krYb91tfOqcuAW0cPKMtI6mVU0OHJ3wOaGAgGM13Y91YW2u+IviU4WQB8MlfLp4dU1zhBIVjWg4Lux7oCoy3r9KxtMZxn9V7uMJtFne1ME3s1DGq/ehS6H9oP4RIBcea+e7WVPIFaNin5W6NkEovc20dUGD7oNGQTaQzOJ0NnN2OknkmA+JyeSxogZgJnTFfMdjyWbh9lrJ2ImVv8A4USR6hMbzMp7zxKtaSSemiHux5BRdHqn0p2yFNT0HroqHrCaHU2ZY4K2nkXQFNR0BeL2V1MyFbdj6IsYZjioun0UMdjyKuqGE+0m4DimdMVD3Y8gsyPULD6QuEwZV/iiAjY3WdpfmeS1nbalzz4VZ2dtjOma3CPVfPrtHQLYpOqHm5Qy2mP2hYSeZKhufEqTvcAi92ZWO4M/gqdcFNEG4ckBXv8AuiaQM+KVd2iuzEyQmf08dYQHmKe6oJARazK6Ag3ytVPs9P8A9K9/eH8JzhnwRNTFoxKc1mAVB0fMcMStY8S67BOdyErZxcV83WW9UcDrRzV76zGt4ApraMF/NdofwQYPdWscS6pn6IvqiZwCZZ50RwbshNgbc5qq8coCntNdhxkhfIi2OCpTy+psvs6qajzVf6yo7PRa1YudHRYU3n7Lcj1U1XXdAuDWhRR2jz4K55kqX7DEGsED4GM5mVUf9kxgxIxKq1Bm4wE41JgflObSGyMFQpcgn1PUpnTFOji6EbeBkJrhkRKYOZT3cyjHicg0ZNEKmOkp/XBT5RKc3xO4KpU4MavmHPEpraQ4Yoc3lVH/AGUcggf2yg7gzaTJ4ulU2fdS3B1Ryc+pMDBFtPdugKPqGGh3QrDstL3WFCn7ruqfutyl7rdpreaPRTUePuVt1PYLZbJ5n4gWRaBzXh9181wA6LVU8IyRAdq2nPFA4WXc1c2LYgYoUWRdEJ7nRNsBMfUtgGc011OMsVZUjDJAAw4ZIsbg09VfUxf/AAnPwgnmoTW04zkrw+623NCdSb4hiVLIHWVIcHcySqNOnGyMVD94lX04niEKbtwcyi3Nzsyppxhk6VJIcecqmxsXMRaXaumc4KY51toM5/40/wD/xAArEAEAAgEDAwIGAwEBAQAAAAABABEhMUFREGGBccEwkaGx4fAg0fFAoFD/2gAIAQEAAT8h/wDLWS9JbhAbr9+k7ie4nuJ7ifYiGQb9sMiTcfgEKN6G7Lkgbz/0Dqp07yyY5P8AhQi6EZPeYOD5vgaw07uBsdEz6D7siQA4Hbl6l7b/ANuZoJo1RQjWS8E8wuC4Bq/r+A8A+hzLC26LruTRFog73L7Tph+DetQwY0hQZAOggpWcfefDAMPM1y23VN56x/h/4bTuK+egv3NOx6GTtNASw9rA3f6dURTI0ghJYnIVctm19iC/ll0ZbdKfGOlhUtrBP0PzBjS0g4ztUw6RU0zQj6V/c7ZzRfvNukrx7xhXnI4+fVYb5xBLdjGGUdsweCWFE0jOTF4LlaxQdM5jBCLbKmNA0N3R89RfBx6MILrg79GEgE1jMchSmyujiQCaxmXpQvY74iUO3oxP2/zBvTt/biFMFtle83gWov3iKqh8Rxh3ft7zfWZ7EQaJT2OgV5ottCUVa5Xoxu39D8wXxlu+WbojPYgADQhcm19HI6p9T00UG2ByxwDQTsezvxGKar69iLOQigS80c8ppYEPVQ3R4Fr1/wAXDJOAIamYkQrWOEvFpZ5cRcix+1C3G/Qh7t+wQBrR3TzN1zAKigrApx00yxpzDNuxTQTC5ZpgPC9XSVeuLbe0sOPhsSwCqWPMWhxPP+SulODWG0VakuV2G9qqJhrkt8f58W2GmPxD+ufX946YX8zz2mBLRwOn7JVBK+wW+73g5T6BDwupcdumwW/focEGujPEQABQYOlMds95dT5Go/ML6yPknqcLwTGqXV8AQK3l+ms0zu/b3mZmflOgItHEQaPccTTXT+UylUNvmFuS3wEbPslH4onvAB0QNuZkuwGeH9O/6hg6IFpa+JmOlpextKodhi3A0q96l2VuFiEohAZlI3VacPFH2JwQWeIVb2ly8lQXfSWxpR5fiC/o0ZIoNlgPrDN9iKbzelmijQ37CDwNGWhB3qFcVmt3WrDEP1usspho6EaBeAy+hD9b6nrlEXfAwXgNYuU7E1uCC1aXCu0dzLvM4rAGiwuFyoq4BBQwHQbDpdnSMRaaI0hSwuRCTbYm7HTJJR5YqJNCyY/nda+sVqCPNQqaKNFbRSwDVt+oy5LhhjTQrjELdkOivFrVN4LSYvmIqLIasSDBDiAXggc1OdZhkQk12r1GuSu0Gv7cRSSxnj4l8XJeGsFLSer9+8zpPbNFtdINj8mdORweg6hknxat/hHLeSsfMZprNcPMyBRrrf8AGPK613fBZwpQLzO6cmR/iXtkTz6wS6GD4rZsjTuwk2a/XzAS4nKZRE047Q2bXn9Ypb0NjpY0nXCPMdIr28fQ3isXfMXWn7cMrP6hLIysZsjMnD/88tUa32+kathbXjZKS+VELgQKzsfSUZk3WA8x1ivZ+zENI6YB46st3opn4Pv0ZZpg+X8G/wArR/voYtembH+Ws4VRzFgC3Y3/ABBEoMrMgu5rWHssqJpMpVZ/vpUGLVG6+Fnout9Xxa24D1cQtsvzOsxlvGqYDDg2lCj1WhKl/KE9ZjBsYDpXEOAuVU0vOn5TyWuCE7QUEAQyeDbo1JXUi/oFmpDU95fZxADe0pbS6lAULZllce4YWUowM4izVKLyiFc5i8Eo/wAc/wBgYBudiHmlQDz08RstgC5ulahKW0rZhnWrRvLpv1peMRKxCJF/OV17wG4HBtXvMuvripmQgvKtUTkxbTES2s43PB5KZVyNuWNGyUBVzKNLOeHSWwMPfwQCrHI/CCFQB6kdjs5GhBhs6nH4Rd1kpvDOJAcotYR3xjr/APVY+TJojj0TVPLS8E1LLyzXqvLHdtrYCpvvntAoo62rcfXLouS9ZMl11CRUC9bsWbypuuJQioOCo7Tmo9Lv2mCjwHmAvT+olg9CJzxLRuu0xZh+TicTteplhgdTVh80hjjEYGFbtgJhNMvFQHNGgGBVgOY2uXh2Q6EV3ortMZWpsoq6YGe8VXQY9QY9NLl4E0PoTwmbbUXMdsAfOAvKUTavh58xmosyOZT6TJVYOSKLpRcQ2qvxGhY3rdEZ7zfghdB5T2J8no0fSL/UMe2eXUSLX0CfjcQJPu9H9xel92PhPK6vpACD/Cr/ADD/AGVu3SL1imjaYugv7x/1r51MqeJuvMxvnft/cyjV+jM53X8ROxb7RR41fdmmmoc29vyIfYH5H5jdTxHpBdCccjZPOZ3dX552WvsjNTQIzHWrAgu87So45ZXMBp7v8S/iAIgbDg6PXzn/AGWpoK8Q+rj7y8u1uWMtgeD9JfCagNXAXpQkY0CviXbxrtMAaHx/qU6GeCN2/wBnrFtBmAo9wS4C8qx7+nKtfKr/AC0rIzABhiZd2mbBGnGmb/Ii0zgi2cquIDqFkbAQrfnM9/gu81gEVHEXWahLOWhvEQiXdtJeLqQNMzsbAaQgj6WgAGhiaKjIagGlJx8ebtlyWQXVZa1TFYsMU5ZhWV1jvUXVZDTDT4aTFy0laBhJeKhIM1DBFxqMrdEXpaOjzBtlGxYDfcj/AM0//9oADAMBAAIAAwAAABDzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzjHHrXzzz3bzzzzzzzzzzzvzzzzzzzy+bZ2vx7x6jHfvLJHXfPXBb/Tfzzzzz1n2Em2fup3Xbi2ubndg+88abzzzzzhHy+3fNy51z7y530/8A8+q/+L988888oYj0v/Vc82/8868890888886888888HCCX3p208VYWA408Q96nEg4PH+88888jsRLlc8ts9KXkKctBfgClJMUc888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888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",
+      "statusTone": "green",
+      "description": "Interview at 16 December",
       "highlightType": "tags"
     }
   ],
   "userName": "Alex",
-  "trashItems": [],
+  "trashItems": [
+    {
+      "id": "trash-1794510698701",
+      "data": {
+        "id": "kickoff-1794510637432",
+        "title": "Kickoff & Milestones",
+        "todos": [
+          {
+            "id": "t-1794510637432",
+            "done": false,
+            "title": "Define project scope & first milestone",
+            "dueDate": "Tomorrow",
+            "comments": 0,
+            "subtasks": [],
+            "dueUrgent": true,
+            "assigneeId": "",
+            "commentList": []
+          }
+        ],
+        "dotColor": "#006946",
+        "dueLabel": "This week",
+        "subtitle": "Initial goals and team alignment.",
+        "notesCount": 0,
+        "phaseBadge": "Phase 1 • Kickoff",
+        "trackLabel": "TRACK 01",
+        "isMilestone": true
+      },
+      "type": "list",
+      "title": "Kickoff & Milestones",
+      "listId": "kickoff-1794510637432",
+      "deletedAt": "2026-11-12T19:11:38.701Z",
+      "listTitle": "Kickoff & Milestones",
+      "projectId": "project-1794510637432",
+      "projectTitle": "BOB SO Exam"
+    }
+  ],
   "userProfile": {
     "id": "alex",
     "bio": "Focusing on calm software, typography, and humane product pacing.",
