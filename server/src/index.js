@@ -1,7 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { readWorkspace, writeWorkspace } from './storage.js';
+import { readWorkspace, writeWorkspace, syncFromDatabaseIfAvailable } from './storage.js';
+import { initDatabase, isDatabaseConnected, checkDatabaseConnection } from './db.js';
 
 dotenv.config();
 
@@ -22,11 +23,28 @@ app.use(express.json());
 // SYSTEM & HEALTH ENDPOINTS
 // -----------------------------------------------------------------------------
 
-app.get('/health', (req, res) => {
+app.get('/health', async (req, res) => {
+  const dbActive = await checkDatabaseConnection();
   res.json({
     status: 'ok',
     service: 'TaskManager Backend',
     timestamp: new Date().toISOString(),
+    databaseConnected: dbActive,
+    databaseEngine: 'PostgreSQL 18 (Local)',
+  });
+});
+
+app.get('/api/database/status', async (req, res) => {
+  const dbActive = await checkDatabaseConnection();
+  res.json({
+    connected: dbActive,
+    engine: 'PostgreSQL 18',
+    host: process.env.PGHOST || '127.0.0.1',
+    port: Number(process.env.PGPORT || 5432),
+    database: process.env.PGDATABASE || 'postgres',
+    user: process.env.PGUSER || 'postgres',
+    hasPasswordConfigured: Boolean(process.env.PGPASSWORD),
+    mode: dbActive ? 'PostgreSQL Active Sync' : 'Local JSON Fallback',
   });
 });
 
@@ -444,6 +462,12 @@ app.delete('/api/trash/:trashId', (req, res) => {
   res.json({ message: 'Permanently deleted', deleted });
 });
 
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`TaskManager backend running on http://localhost:${port}`);
+  try {
+    await initDatabase();
+    await syncFromDatabaseIfAvailable();
+  } catch (err) {
+    console.warn('Initial database connection notice:', err.message);
+  }
 });

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { saveWorkspaceToDatabase, loadWorkspaceFromDatabase } from './db.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -100,16 +101,15 @@ const INITIAL_WORKSPACE = {
           trackLabel: 'TRACK 02',
           dotColor: '#feb235',
           title: 'Frontend Engineering',
-          subtitle: 'Core React components, accessible controls, and smooth view transitions.',
-          dueLabel: 'Due Oct 28',
+          subtitle: 'React component system, SVG progress rings, hill chart, and calm UI transitions.',
+          dueLabel: 'Due in 10 days',
           isMilestone: false,
-          notesCount: 12,
-          phaseBadge: 'Sprint Phase 2 • Build Track',
+          notesCount: 4,
+          phaseBadge: 'Engineering Track • Sprint 2',
           todos: [
-            { id: 'fe-1', title: 'Setup Tailwind CSS config', done: true, assigneeId: 'liam', dueDate: 'Oct 20', comments: 3, subtasks: [] },
-            { id: 'fe-2', title: 'Implement standard App Shell', done: false, assigneeId: 'liam', dueDate: 'Oct 27', comments: 4, subtasks: [] },
-            { id: 'fe-3', title: 'Fast navigation state sync', done: false, assigneeId: 'alex', dueDate: 'Oct 28', comments: 2, subtasks: [] },
-            { id: 'fe-4', title: 'Performance audit & zero CLS', done: false, assigneeId: 'devon', dueDate: 'Oct 29', comments: 0, subtasks: [] },
+            { id: 'fe-1', title: 'Implement Hill Chart canvas & curve drag interactions', done: true, assigneeId: 'liam', dueDate: 'Oct 18', comments: 4, subtasks: [] },
+            { id: 'fe-2', title: 'Circular SVG progress rings for Track cards', done: true, assigneeId: 'alex', dueDate: 'Oct 21', comments: 1, subtasks: [] },
+            { id: 'fe-3', title: 'Refactor drag-and-drop sortable lists with calm ghost styling', done: false, assigneeId: 'liam', dueDate: 'Oct 27', comments: 0, subtasks: [] },
           ],
         },
       ],
@@ -117,29 +117,27 @@ const INITIAL_WORKSPACE = {
     {
       id: 'mobile-app-v3',
       title: 'Mobile App v3.0',
-      description: 'Offline syncing, redesigned inbox swipe actions, and smoother typography rendering.',
+      description: 'Streamlined iOS and Android experiences with offline task capture and instant search.',
       status: 'In Progress',
       statusTone: 'green',
-      highlightType: 'quote',
-      highlightAuthor: 'Latest update from Liam',
-      highlightText: '"TestFlight build #448 is live for internal test..."',
-      members: ['liam', 'sarah', 'devon'],
+      highlightType: 'hill',
+      coverImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=720&q=80',
+      members: ['alex', 'devon'],
       activeAgo: 'Active 2h ago',
       lists: [
         {
-          id: 'mobile-sync',
+          id: 'core-flows',
           trackLabel: 'TRACK 01',
           dotColor: '#006946',
-          title: 'Offline Sync Engine',
-          subtitle: 'Conflict-free queue reconciliation when reconnecting on trains or flights.',
-          dueLabel: 'Due Nov 01',
+          title: 'Core Onboarding & Sync',
+          subtitle: 'First run experience and offline conflict resolution.',
+          dueLabel: 'Due in 2 weeks',
           isMilestone: true,
-          notesCount: 5,
-          phaseBadge: 'Mobile Sprint 3 • Core',
+          notesCount: 3,
+          phaseBadge: 'Sprint 3 • Beta',
           todos: [
-            { id: 'ms-1', title: 'SQLite local cache migration', done: true, assigneeId: 'liam', dueDate: 'Oct 22', comments: 2, subtasks: [] },
-            { id: 'ms-2', title: 'Optimistic swipe-to-archive action', done: true, assigneeId: 'sarah', dueDate: 'Oct 23', comments: 1, subtasks: [] },
-            { id: 'ms-3', title: 'Background retry backoff tuning', done: false, assigneeId: 'liam', dueDate: 'Oct 30', comments: 3, subtasks: [] },
+            { id: 'ma-1', title: 'Biometric unlock & session persistence', done: true, assigneeId: 'devon', dueDate: 'Oct 15', comments: 1, subtasks: [] },
+            { id: 'ma-2', title: 'Offline sync queue with optimistic updates', done: false, assigneeId: 'alex', dueDate: 'Oct 30', comments: 6, subtasks: [] },
           ],
         },
       ],
@@ -147,25 +145,21 @@ const INITIAL_WORKSPACE = {
     {
       id: 'brand-design-system',
       title: 'Brand Guidelines & Design System',
-      description: 'Standardizing type scale, color tokens, and editorial illustration rules for all digital products.',
+      description: 'Unified typography, color palette, icons, and voice tokens for the studio.',
       status: 'Reviewing',
       statusTone: 'amber',
-      highlightType: 'tags',
-      tags: [
-        { label: 'Typography', tone: 'neutral' },
-        { label: 'Figma Lib', tone: 'neutral' },
-        { label: 'Priority 1', tone: 'amber' },
-      ],
-      members: ['sarah', 'alex', 'maya', 'liam', 'devon'],
+      highlightType: 'none',
+      coverImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=720&q=80',
+      members: ['sarah', 'alex'],
       activeAgo: 'Active yesterday',
       lists: [
         {
-          id: 'tokens-v2',
+          id: 'design-tokens',
           trackLabel: 'TRACK 01',
-          dotColor: '#feb235',
-          title: 'Design Tokens & Scale',
-          subtitle: 'Canonical Newsreader + Inter pairing across web and mobile.',
-          dueLabel: 'In review',
+          dotColor: '#1d4e3b',
+          title: 'Design Tokens & Typography',
+          subtitle: 'Newsreader serif pairing and parchment surface hierarchy.',
+          dueLabel: 'Completed',
           isMilestone: true,
           notesCount: 6,
           phaseBadge: 'Design System • v2',
@@ -203,4 +197,21 @@ export function readWorkspace() {
 export function writeWorkspace(data) {
   ensureDirSync(path.dirname(DATA_FILE));
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+  // Replicate to PostgreSQL if connected
+  saveWorkspaceToDatabase(data).catch(() => {});
+}
+
+export async function syncFromDatabaseIfAvailable() {
+  try {
+    const remote = await loadWorkspaceFromDatabase();
+    if (remote && Array.isArray(remote.projects) && remote.projects.length > 0) {
+      ensureDirSync(path.dirname(DATA_FILE));
+      fs.writeFileSync(DATA_FILE, JSON.stringify(remote, null, 2), 'utf-8');
+      console.log('Synchronized workspace from local PostgreSQL database.');
+      return remote;
+    }
+  } catch (err) {
+    console.warn('PostgreSQL initial sync notice:', err.message);
+  }
+  return null;
 }
